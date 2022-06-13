@@ -1,253 +1,217 @@
+@import url('http://fonts.cdnfonts.com/css/helvetica-neue-9');
+
 * {
-    font-family: sans-serif;
-    text-transform: capitalize;
-}
-
-body {
-    background-color: #f0f2f5;
-}
-
-.login-fb {
-    width: 80%;
-    margin-left: 10%;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-}
-
-.login-fb .info {
-    margin-top: 65px;
-    margin-left: 34px;
-}
-
-.login-fb .info .image {
-    width: 244px;
-    margin-bottom: -14px;
-    margin-left: -27px;
-}
-
-.login-fb .info .image img {
-    width: 88%;
-}
-
-.login-fb .info h2 {
-    color: black;
-    font-weight: 100;
-    margin: 8px 0 -12px;
-    font-size: 28px;
-}
-
-.login-fb .info p {
-    font-size: 15px;
-    margin-top: 21px;
-}
-
-.login-fb .contes {
-    display: flex;
-    margin-top: 30px;
-}
-
-.login-fb .info .contes .image-profile {
-    width: 161px;
-    height: 194px;
-    position: relative;
-    border: 1px solid #9e9e9e3b;
-    border-radius: 10px;
-}
-
-.login-fb .info .contes .image-profile:hover,
-.login-fb .info .contes .image-creer:hover {
-    box-shadow: 0px 0px 8px #ccc;
-    transform: scale(1.04);
-    cursor: pointer;
-}
-
-.login-fb .info .contes .image-profile::after {
-    content: "khirdin";
-    position: absolute;
-    background-color: white;
-    bottom: 0px;
-    left: 0;
-    width: 85%;
-    padding: 12px;
-    text-align: center;
-    border-radius: 0 0 10px 10px;
-}
-
-.login-fb .info .contes .image-profile img {
-    border-radius: 10px 10px 0 0;
-    width: 100%;
-}
-
-.login-fb .info .contes .image-profile .close {
-    position: absolute;
-    top: 7px;
-    left: 7px;
-    color: white;
-    background: grey;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.login-fb .info .contes .image-profile:hover .close {
-    color: grey;
-    background-color: white;
-    transform: scale(1.2);
-}
-
-.login-fb .info .contes .image-creer {
-    width: 161px;
-    height: 248px;
-    background: #f5f6f7;
-    border: 1px solid #9e9e9e3b;
-    margin-left: 50px;
-    border-radius: 10px;
-    position: relative;
-}
-
-.login-fb .info .contes .image-creer::after {
-    content: "ajouter un compte";
-    position: absolute;
-    left: 0;
-    bottom: 0px;
-    width: 100%;
-    background-color: white;
-    padding: 12px 30px;
+    font-family: 'Helvetica Neue', sans-serif;
+    ;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    border-radius: 0 0 10px 10px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    color: #1976f2;
-    text-align: center;
-    font-size: 19px;
+    transition: 0.4s;
 }
 
-.login-fb .info .contes .image-creer .plus {
-    position: absolute;
-    top: 28%;
-    left: 36%;
-    background-color: #1976f2;
-    font-size: xx-large;
-    color: white;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
+section {
+    background-color: #f0f2f5;
+    height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 0 8%;
 }
 
-/******************* form ****************/
+img {
+    width: 330px;
+    margin: -33px;
+}
+
+h3 {
+    font-size: 1.65rem;
+    font-weight: 300;
+    width: 420px;
+    margin-top: 20px;
+    line-height: 2rem;
+}
 
 form {
-    background: white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center;*/
-    width: 377px;
-    height: fit-content;
-    position: relative;
-    top: 114px;
-    right: -122px;
-    border-radius: 14px;
-    padding: 10px;
+    width: 400px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.18);
+    margin-bottom: 40px;
 }
 
-form input {
-    width: 86%;
-    padding: 16px;
+input {
+    border: 1px solid #E0E0E0;
     border-radius: 6px;
-    outline: none;
-    border: 1px solid #ccc;
-    margin-top: 13px;
+    width: 100%;
+    height: 50px;
+    font-size: 1rem;
+    padding-left: 10px;
+    color: #E0E0E0;
+    margin-bottom: 20px;
 }
 
-form input::placeholder {
-    font-size: 17px;
-    color: rgb(167, 167, 167);
-    font-weight: 300;
-}
-
-form input:focus:not(form input[type="submit"]) {
-    border: 1px solid #1473ef;
-    box-shadow: 0px 0px 2px #1473ef;
-}
-
-.valid input[type="email"],
-.valid input[type="email"]:focus {
-    border: 1px solid #17ce17;
-}
-
-form input[type="email"]+.text {
-    display: none;
-    font-size: 17px;
-    width: 93%;
-    height: 27px;
-    margin-bottom: 0;
-}
-
-.error input[type="email"]+.text {
-    color: red;
-    display: block;
-}
-
-.valid input[type="email"]+.text {
-    color: #17ce17;
-    display: block;
-}
-
-form input[type="password"] {}
-
-form input[type="submit"] {
-    background: #1473ef;
-    width: 95%;
+.login-btn {
+    width: 100%;
+    height: 50px;
+    font-size: 1.3rem;
+    font-weight: 600;
     color: white;
-    font-size: 23px;
-    font-weight: bold;
-    height: 51px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background-color: #1877f2;
+    border: none;
+    border-radius: 8px;
 }
 
-form input[type="submit"]:hover {
-    background-color: #116ee8;
+.login-btn:hover {
+    background-color: #166fe5;
     cursor: pointer;
 }
 
-form a {
-    margin-top: 20px;
+.forgot-pass {
+    margin: 20px 0;
+    color: #1877f2;
     text-decoration: none;
-    color: #1b4cfd;
 }
 
-form a:hover {
+.forgot-pass:hover {
     text-decoration: underline;
 }
 
-form .new {
-    margin-top: 18px;
-    padding-top: 7px;
-    border-top: 1px solid #ccc;
+hr {
     width: 100%;
+    height: 1px;
+    border: none;
+    background-color: #e0e0e0;
+    margin-bottom: 20px;
 }
 
-form .new p {
-    background: #42b72a;
+.create-btn {
+    background-color: #42b72a;
     color: white;
-    padding: 17px 20px;
-    border-radius: 7px;
-    width: fit-content;
-    margin: 14px auto;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    margin: 5px 0;
 }
 
-form .new p:hover {
-    background-color: #35a51e;
+.create-btn:hover {
     cursor: pointer;
+    background-color: #36a420;
+}
+
+.signup {
+    text-align: center;
+}
+
+.createpage {
+    font-weight: 600;
+    color: black;
+    text-decoration: none;
+}
+
+.createpage:hover {
+    text-decoration: underline;
+}
+
+footer {
+    padding: 50px 40px;
+}
+
+.langs {
+    margin-bottom: 20px;
+}
+
+.langs a:first-child {
+    color: #737373;
+}
+
+.langs a:first-child:hover {
+    text-decoration: none;
+}
+
+.langs a,
+.sitelinks a,
+.copyright {
+    color: #8a8d91;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 1rem;
+    font-family: 'Helvetica 25 UltraLight', sans-serif;
+    line-height: 30px;
+}
+
+.langs a:hover,
+.sitelinks a:hover {
+    text-decoration: underline;
+}
+
+.more-lang {
+    padding: 2px 0;
+    border: 1px solid #ccd0d5;
+    border-radius: 3px;
+    background-color: #f5f6f7;
+}
+
+.more-lang svg {
+    width: 30px;
+    height: 15px;
+    display: flex;
+    fill: #8a8d91;
+}
+
+.copyright {
+    margin-top: 20px;
+    color: #737373;
+}
+
+@media screen and (max-width: 1050px) {
+    html {
+        font-size: 14px;
+    }
+
+    section {
+        height: auto;
+        flex-direction: column;
+        padding: 50px 0 80px;
+        ;
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    form {
+        margin-top: 40px;
+    }
+}
+
+@media screen and (max-width: 474px) {
+    section {
+        height: auto;
+        flex-direction: column;
+        padding: 50px 0 80px;
+        ;
+    }
+
+    .text img {
+        width: 250px;
+    }
+
+    .text h3 {
+        width: 320px;
+        font-size: 1.3rem;
+    }
+
+    form {
+        margin-top: 30px;
+        width: 320px;
+    }
 }
